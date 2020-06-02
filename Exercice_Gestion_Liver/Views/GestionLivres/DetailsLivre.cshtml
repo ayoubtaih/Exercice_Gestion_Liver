@@ -1,0 +1,50 @@
+﻿@model Exercice_Gestion_Liver.Liver
+
+@{
+    ViewBag.Title = "Details Livre";
+}
+
+<h2>Details Livre</h2>
+
+<div>
+    <h4>Liver</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Titre)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Titre)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ecrivain)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ecrivain)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.DateSortie)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.DateSortie)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Prix)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Prix)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Editer", "EditLivre", new { id = Model.ID }) |
+    @Html.ActionLink("Retour", "Index")
+</p>

@@ -1,0 +1,52 @@
+﻿@model IEnumerable<Exercice_Gestion_Liver.Liver>
+
+@{
+    ViewBag.Title = "Gestion des Livres";
+}
+
+<h2>Gestion des Livres</h2>
+
+<p>
+    @Html.ActionLink("Créer Nouveau", "CreerLivre")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Titre)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Ecrivain)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.DateSortie)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Prix)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Titre)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Ecrivain)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.DateSortie)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Prix)
+        </td>
+        <td>
+            @Html.ActionLink("Editer", "EditLivre", new { id = item.ID }) |
+            @Html.ActionLink("Details", "DetailsLivre", new { id = item.ID }) |
+            @Html.ActionLink("Supprimer", "SupprimerLivre", new { id = item.ID })
+
+        </td>
+    </tr>
+}
+
+</table>
